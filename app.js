@@ -94,13 +94,13 @@ mobileMenu.querySelectorAll('a').forEach(a => {
    3. Refresh the browser — they appear automatically
    ─────────────────────────────────────────────────────────────────────── */
 const courtPhotos = [
-  { file: 'assets/court1.jpg',    fallback: 'assets/facility.svg', label: 'Court 1' },
-  { file: 'assets/court2.jpg',    fallback: 'assets/facility.svg', label: 'Court 2' },
-  { file: 'assets/court3.jpg',    fallback: 'assets/facility.svg', label: 'Court 3' },
-  { file: 'assets/court4.jpg',    fallback: 'assets/facility.svg', label: 'Court 4' },
-  { file: 'assets/facility.jpg',  fallback: 'assets/facility.svg', label: 'The Lounge' },
-  { file: 'assets/court5.jpg',    fallback: 'assets/facility.svg', label: 'Night Sessions' },
-  { file: 'assets/court6.jpg',    fallback: 'assets/facility.svg', label: 'Tournament Court' },
+  { file: 'assets/court1.png',    fallback: 'assets/facility.svg', label: 'Court 1' },
+  { file: 'assets/court2.png',    fallback: 'assets/facility.svg', label: 'Court 2' },
+  { file: 'assets/court3.png',    fallback: 'assets/facility.svg', label: 'Court 3' },
+  { file: 'assets/court4.png',    fallback: 'assets/facility.svg', label: 'Court 4' },
+  { file: 'assets/facility.png',  fallback: 'assets/facility.svg', label: 'The Lounge' },
+  { file: 'assets/court5.png',    fallback: 'assets/facility.svg', label: 'Night Sessions' },
+  { file: 'assets/court6.png',    fallback: 'assets/facility.svg', label: 'Tournament Court' },
 ];
 
 function buildGallery() {
@@ -204,8 +204,8 @@ function setupCounters() {
 }
 
 /* ─── 3D CAROUSEL ─── */
-const IMG_RACKETS  = 'assets/rackets.jpg';
-const IMG_FACILITY = 'assets/facility.jpg';
+const IMG_RACKETS  = 'assets/rackets.png';
+const IMG_FACILITY = 'assets/facility.png';
 
 const racketData = [
   { img: IMG_RACKETS,  title: 'METALBONE HRD',    sub: 'Adidas · High Performance' },
