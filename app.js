@@ -87,6 +87,72 @@ mobileMenu.querySelectorAll('a').forEach(a => {
   });
 });
 
+/* ─── COURTS PHOTO GALLERY ───────────────────────────────────────────────
+   To add more court photos:
+   1. Name your files: court1.jpg, court2.jpg, court3.jpg ... (up to court9.jpg)
+   2. Drop them into the  assets/  folder
+   3. Refresh the browser — they appear automatically
+   ─────────────────────────────────────────────────────────────────────── */
+const courtPhotos = [
+  { file: 'assets/court1.jpg',    fallback: 'assets/facility.svg', label: 'Court 1' },
+  { file: 'assets/court2.jpg',    fallback: 'assets/facility.svg', label: 'Court 2' },
+  { file: 'assets/court3.jpg',    fallback: 'assets/facility.svg', label: 'Court 3' },
+  { file: 'assets/court4.jpg',    fallback: 'assets/facility.svg', label: 'Court 4' },
+  { file: 'assets/facility.jpg',  fallback: 'assets/facility.svg', label: 'The Lounge' },
+  { file: 'assets/court5.jpg',    fallback: 'assets/facility.svg', label: 'Night Sessions' },
+  { file: 'assets/court6.jpg',    fallback: 'assets/facility.svg', label: 'Tournament Court' },
+];
+
+function buildGallery() {
+  const track = document.getElementById('galleryTrack');
+  if (!track) return;
+  track.innerHTML = '';
+
+  courtPhotos.forEach(photo => {
+    const item = document.createElement('div');
+    item.className = 'gallery-item';
+    item.innerHTML = `
+      <img src="${photo.file}" onerror="this.src='${photo.fallback}'" alt="${photo.label}" loading="lazy" />
+      <div class="gallery-item-label">${photo.label}</div>`;
+    track.appendChild(item);
+  });
+
+  setupGalleryDrag(track.parentElement, track);
+}
+
+function setupGalleryDrag(strip, track) {
+  let isDown = false, startX = 0, scrollLeft = 0;
+
+  strip.addEventListener('mousedown', e => {
+    isDown = true;
+    strip.classList.add('active');
+    startX = e.pageX - strip.offsetLeft;
+    scrollLeft = strip.scrollLeft;
+  });
+  strip.addEventListener('mouseleave', () => { isDown = false; });
+  strip.addEventListener('mouseup', () => { isDown = false; });
+  strip.addEventListener('mousemove', e => {
+    if (!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - strip.offsetLeft;
+    strip.scrollLeft = scrollLeft - (x - startX) * 1.4;
+  });
+
+  strip.addEventListener('touchstart', e => {
+    startX = e.touches[0].pageX;
+    scrollLeft = strip.scrollLeft;
+  }, { passive: true });
+  strip.addEventListener('touchmove', e => {
+    const x = e.touches[0].pageX;
+    strip.scrollLeft = scrollLeft - (x - startX);
+  }, { passive: true });
+
+  strip.style.overflowX = 'scroll';
+  strip.style.scrollbarWidth = 'none';
+  strip.style.msOverflowStyle = 'none';
+  strip.style.cssText += '; -webkit-overflow-scrolling: touch;';
+}
+
 /* ─── PARALLAX ─── */
 function handleParallax() {
   document.querySelectorAll('.parallax-bg, .parallax-layer').forEach(el => {
@@ -248,6 +314,7 @@ window.addEventListener('scroll', heroZoom, { passive: true });
 function kickOffAnimations() {
   setupReveal();
   setupCounters();
+  buildGallery();
   buildCarousel();
   handleParallax();
   heroZoom();
