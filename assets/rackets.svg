@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="1400" viewBox="0 0 920 1400">
+  <defs>
+    <linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a1a"/>
+      <stop offset="50%" style="stop-color:#2d2d2d"/>
+      <stop offset="100%" style="stop-color:#111111"/>
+    </linearGradient>
+    <linearGradient id="gAccent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#e84339;stop-opacity:0.3"/>
+      <stop offset="100%" style="stop-color:#c8a96e;stop-opacity:0.15"/>
+    </linearGradient>
+    <pattern id="tiles" x="0" y="0" width="120" height="120" patternUnits="userSpaceOnUse">
+      <rect width="58" height="58" fill="#2a1a1a" rx="2"/>
+      <rect x="62" width="58" height="58" fill="#1a1010" rx="2"/>
+      <rect y="62" width="58" height="58" fill="#1a1010" rx="2"/>
+      <rect x="62" y="62" width="58" height="58" fill="#2a1a1a" rx="2"/>
+    </pattern>
+  </defs>
+  <rect width="920" height="1400" fill="url(#tiles)"/>
+  <rect width="920" height="1400" fill="url(#gAccent)"/>
+  <!-- Racket 1 -->
+  <g transform="translate(120,100)">
+    <ellipse cx="100" cy="130" rx="85" ry="115" fill="#1c1c1c" stroke="#333" stroke-width="8"/>
+    <ellipse cx="100" cy="130" rx="75" ry="105" fill="none" stroke="#222" stroke-width="2"/>
+    <line x1="100" y1="20" x2="100" y2="240" stroke="#252525" stroke-width="1.5"/>
+    <line x1="20" y1="130" x2="180" y2="130" stroke="#252525" stroke-width="1.5"/>
+    <circle cx="60" cy="80" r="9" fill="#333" stroke="#444" stroke-width="1"/>
+    <circle cx="100" cy="60" r="9" fill="#333" stroke="#444" stroke-width="1"/>
+    <circle cx="140" cy="80" r="9" fill="#333" stroke="#444" stroke-width="1"/>
+    <circle cx="60" cy="130" r="9" fill="#333" stroke="#444" stroke-width="1"/>
+    <circle cx="140" cy="130" r="9" fill="#333" stroke="#444" stroke-width="1"/>
+    <circle cx="60" cy="180" r="9" fill="#333" stroke="#444" stroke-width="1"/>
+    <circle cx="100" cy="195" r="9" fill="#333" stroke="#444" stroke-width="1"/>
+    <circle cx="140" cy="180" r="9" fill="#333" stroke="#444" stroke-width="1"/>
+    <polygon points="60,80 140,80 160,130 140,180 60,180 40,130" fill="none" stroke="#c8a96e" stroke-width="1.5" opacity="0.6"/>
+    <rect x="88" y="245" width="24" height="120" rx="4" fill="#222" stroke="#333" stroke-width="2"/>
+    <text x="100" y="390" text-anchor="middle" font-family="sans-serif" font-size="9" fill="#c8a96e" letter-spacing="1">METALBONE HRD</text>
+  </g>
+  <!-- Racket 2 -->
+  <g transform="translate(370,80)">
+    <ellipse cx="100" cy="130" rx="88" ry="118" fill="#181818" stroke="#2a2a2a" stroke-width="8"/>
+    <polygon points="60,60 140,60 170,130 140,200 60,200 30,130" fill="none" stroke="#333" stroke-width="2"/>
+    <circle cx="55" cy="75" r="10" fill="#222" stroke="#e84339" stroke-width="1.5"/>
+    <circle cx="100" cy="52" r="10" fill="#222" stroke="#e84339" stroke-width="1.5"/>
+    <circle cx="145" cy="75" r="10" fill="#222" stroke="#e84339" stroke-width="1.5"/>
+    <circle cx="55" cy="130" r="10" fill="#222" stroke="#e84339" stroke-width="1.5"/>
+    <circle cx="145" cy="130" r="10" fill="#222" stroke="#e84339" stroke-width="1.5"/>
+    <circle cx="55" cy="185" r="10" fill="#222" stroke="#e84339" stroke-width="1.5"/>
+    <circle cx="100" cy="200" r="10" fill="#222" stroke="#e84339" stroke-width="1.5"/>
+    <circle cx="145" cy="185" r="10" fill="#222" stroke="#e84339" stroke-width="1.5"/>
+    <rect x="88" y="245" width="24" height="120" rx="4" fill="#1a1a1a" stroke="#2a2a2a" stroke-width="2"/>
+    <text x="100" y="390" text-anchor="middle" font-family="sans-serif" font-size="9" fill="#e84339" letter-spacing="1">METALBONE CARBON</text>
+  </g>
+  <!-- Racket 3 -->
+  <g transform="translate(630,100)">
+    <ellipse cx="100" cy="130" rx="85" ry="115" fill="#1c1c1c" stroke="#333" stroke-width="8"/>
+    <ellipse cx="100" cy="130" rx="75" ry="105" fill="none" stroke="#222" stroke-width="2"/>
+    <circle cx="60" cy="80" r="9" fill="#333" stroke="#444" stroke-width="1"/>
+    <circle cx="100" cy="60" r="9" fill="#333" stroke="#444" stroke-width="1"/>
+    <circle cx="140" cy="80" r="9" fill="#333" stroke="#444" stroke-width="1"/>
+    <circle cx="60" cy="130" r="9" fill="#333" stroke="#444" stroke-width="1"/>
+    <circle cx="140" cy="130" r="9" fill="#333" stroke="#444" stroke-width="1"/>
+    <circle cx="60" cy="180" r="9" fill="#333" stroke="#444" stroke-width="1"/>
+    <circle cx="100" cy="195" r="9" fill="#333" stroke="#444" stroke-width="1"/>
+    <circle cx="140" cy="180" r="9" fill="#333" stroke="#444" stroke-width="1"/>
+    <polygon points="60,80 140,80 160,130 140,180 60,180 40,130" fill="none" stroke="#c8a96e" stroke-width="1.5" opacity="0.6"/>
+    <rect x="88" y="245" width="24" height="120" rx="4" fill="#222" stroke="#333" stroke-width="2"/>
+    <text x="100" y="390" text-anchor="middle" font-family="sans-serif" font-size="9" fill="#c8a96e" letter-spacing="1">METALBONE HRD</text>
+  </g>
+  <!-- Bottom row circular paddles -->
+  <g transform="translate(80,580)">
+    <circle cx="120" cy="120" r="115" fill="#1a1a1a" stroke="#2a2a2a" stroke-width="8"/>
+    <circle cx="120" cy="120" r="90" fill="none" stroke="#252525" stroke-width="2"/>
+    <polygon points="85,60 155,60 185,120 155,180 85,180 55,120" fill="none" stroke="#333" stroke-width="3"/>
+    <circle cx="90" cy="75" r="10" fill="#222" stroke="#c8a96e" stroke-width="1.5"/>
+    <circle cx="120" cy="58" r="10" fill="#222" stroke="#c8a96e" stroke-width="1.5"/>
+    <circle cx="150" cy="75" r="10" fill="#222" stroke="#c8a96e" stroke-width="1.5"/>
+    <circle cx="90" cy="120" r="10" fill="#222" stroke="#c8a96e" stroke-width="1.5"/>
+    <circle cx="150" cy="120" r="10" fill="#222" stroke="#c8a96e" stroke-width="1.5"/>
+    <circle cx="90" cy="165" r="10" fill="#222" stroke="#c8a96e" stroke-width="1.5"/>
+    <circle cx="120" cy="180" r="10" fill="#222" stroke="#c8a96e" stroke-width="1.5"/>
+    <circle cx="150" cy="165" r="10" fill="#222" stroke="#c8a96e" stroke-width="1.5"/>
+    <rect x="108" y="235" width="24" height="100" rx="4" fill="#222" stroke="#333" stroke-width="2"/>
+    <text x="120" y="360" text-anchor="middle" font-family="sans-serif" font-size="9" fill="#c8a96e" letter-spacing="1">ARROW CTRL</text>
+  </g>
+  <g transform="translate(340,560)">
+    <circle cx="130" cy="130" r="125" fill="#f0ede8" stroke="#ddd" stroke-width="8"/>
+    <circle cx="130" cy="130" r="100" fill="none" stroke="#ccc" stroke-width="2"/>
+    <polygon points="95,50 165,50 200,130 165,210 95,210 60,130" fill="none" stroke="#aaa" stroke-width="3"/>
+    <circle cx="95" cy="70" r="12" fill="#e0dcd5" stroke="#bbb" stroke-width="1.5"/>
+    <circle cx="130" cy="50" r="12" fill="#e0dcd5" stroke="#bbb" stroke-width="1.5"/>
+    <circle cx="165" cy="70" r="12" fill="#e0dcd5" stroke="#bbb" stroke-width="1.5"/>
+    <circle cx="95" cy="130" r="12" fill="#e0dcd5" stroke="#bbb" stroke-width="1.5"/>
+    <circle cx="165" cy="130" r="12" fill="#e0dcd5" stroke="#bbb" stroke-width="1.5"/>
+    <circle cx="95" cy="190" r="12" fill="#e0dcd5" stroke="#bbb" stroke-width="1.5"/>
+    <circle cx="130" cy="210" r="12" fill="#e0dcd5" stroke="#bbb" stroke-width="1.5"/>
+    <circle cx="165" cy="190" r="12" fill="#e0dcd5" stroke="#bbb" stroke-width="1.5"/>
+    <text x="130" y="135" text-anchor="middle" font-family="sans-serif" font-size="18" fill="#e84339" font-weight="bold" letter-spacing="2">◆◆◆</text>
+    <rect x="118" y="255" width="24" height="100" rx="4" fill="#ddd" stroke="#ccc" stroke-width="2"/>
+    <text x="130" y="375" text-anchor="middle" font-family="sans-serif" font-size="9" fill="#333" letter-spacing="1">CROSS IT LIGHT</text>
+  </g>
+  <g transform="translate(630,580)">
+    <circle cx="120" cy="120" r="115" fill="#181818" stroke="#222" stroke-width="8"/>
+    <circle cx="120" cy="120" r="90" fill="none" stroke="#1e1e1e" stroke-width="2"/>
+    <polygon points="85,60 155,60 185,120 155,180 85,180 55,120" fill="none" stroke="#2a2a2a" stroke-width="3"/>
+    <circle cx="90" cy="75" r="10" fill="#1a1a1a" stroke="#333" stroke-width="1.5"/>
+    <circle cx="120" cy="58" r="10" fill="#1a1a1a" stroke="#333" stroke-width="1.5"/>
+    <circle cx="150" cy="75" r="10" fill="#1a1a1a" stroke="#333" stroke-width="1.5"/>
+    <circle cx="90" cy="120" r="10" fill="#1a1a1a" stroke="#333" stroke-width="1.5"/>
+    <circle cx="150" cy="120" r="10" fill="#1a1a1a" stroke="#333" stroke-width="1.5"/>
+    <circle cx="90" cy="165" r="10" fill="#1a1a1a" stroke="#333" stroke-width="1.5"/>
+    <circle cx="120" cy="180" r="10" fill="#1a1a1a" stroke="#333" stroke-width="1.5"/>
+    <circle cx="150" cy="165" r="10" fill="#1a1a1a" stroke="#333" stroke-width="1.5"/>
+    <rect x="108" y="235" width="24" height="100" rx="4" fill="#1a1a1a" stroke="#222" stroke-width="2"/>
+    <text x="120" y="360" text-anchor="middle" font-family="sans-serif" font-size="9" fill="#888" letter-spacing="1">METALBONE CB</text>
+  </g>
+  <!-- Overlay text -->
+  <text x="460" y="1050" text-anchor="middle" font-family="Georgia,serif" font-size="11" fill="rgba(200,169,110,0.4)" letter-spacing="4" text-transform="uppercase">ADD YOUR PHOTO: assets/rackets.jpg</text>
+</svg>
