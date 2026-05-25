@@ -742,6 +742,141 @@ body:has(button:hover) #cursor {
 }
 .booking-form .btn-primary { margin-top: 12px; }
 
+/* ─── AI BALL SECTION ─── */
+.aiball-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 100vh;
+  width: 100%;
+  align-items: center;
+}
+.aiball-visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(60px, 8vw, 120px);
+  background: radial-gradient(ellipse at center, rgba(232,67,57,0.08) 0%, transparent 70%);
+  min-height: 100vh;
+}
+.aiball-radar {
+  position: relative;
+  width: 340px;
+  height: 340px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.radar-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(232,67,57,0.2);
+  animation: radarPulse 3s ease-in-out infinite;
+}
+.ring-1 { width: 100%; height: 100%; animation-delay: 0s; }
+.ring-2 { width: 70%; height: 70%; animation-delay: 0.4s; border-color: rgba(232,67,57,0.3); }
+.ring-3 { width: 40%; height: 40%; animation-delay: 0.8s; border-color: rgba(232,67,57,0.5); }
+@keyframes radarPulse {
+  0%, 100% { opacity: 0.4; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.02); }
+}
+.radar-sweep {
+  position: absolute;
+  width: 100%; height: 100%;
+  border-radius: 50%;
+  background: conic-gradient(from 0deg, transparent 0deg, rgba(232,67,57,0.15) 60deg, transparent 60deg);
+  animation: sweep 3s linear infinite;
+}
+@keyframes sweep { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+.radar-center {
+  position: relative;
+  z-index: 2;
+  width: 80px; height: 80px;
+  animation: ballFloat 4s ease-in-out infinite;
+}
+@keyframes ballFloat {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+.radar-ball { width: 100%; height: 100%; }
+.radar-chip {
+  position: absolute;
+  background: rgba(10,10,10,0.92);
+  border: 1px solid rgba(232,67,57,0.4);
+  border-radius: 6px;
+  padding: 8px 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  backdrop-filter: blur(10px);
+  z-index: 3;
+}
+.chip-1 { top: 0; left: 50%; transform: translateX(-50%); }
+.chip-2 { right: -10px; top: 50%; transform: translateY(-50%); }
+.chip-3 { bottom: 0; left: 50%; transform: translateX(-50%); }
+.chip-4 { left: -10px; top: 50%; transform: translateY(-50%); }
+.chip-val {
+  font-family: var(--font-display);
+  font-size: 22px;
+  color: var(--accent);
+  line-height: 1;
+  letter-spacing: 1px;
+}
+.chip-label {
+  font-size: 9px;
+  color: rgba(255,255,255,0.45);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.aiball-text {
+  padding: clamp(48px, 8vw, 120px);
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+.aiball-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.aiball-stat {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 16px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 4px;
+  transition: background 0.3s ease, border-color 0.3s ease;
+}
+.aiball-stat:hover {
+  background: rgba(232,67,57,0.06);
+  border-color: rgba(232,67,57,0.2);
+}
+.aiball-stat-icon { font-size: 20px; flex-shrink: 0; margin-top: 2px; }
+.aiball-stat-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: white;
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
+}
+.aiball-stat-desc {
+  font-size: 12px;
+  color: rgba(255,255,255,0.45);
+  line-height: 1.6;
+}
+@media (max-width: 1024px) {
+  .aiball-layout { grid-template-columns: 1fr; }
+  .aiball-visual { min-height: auto; padding: 80px 8vw 40px; }
+  .aiball-radar { width: 280px; height: 280px; }
+}
+@media (max-width: 480px) {
+  .aiball-radar { width: 220px; height: 220px; }
+  .chip-val { font-size: 16px; }
+}
+
 /* ─── PLAYTOMIC BOOKING ─── */
 .playtomic-cta {
   display: flex;

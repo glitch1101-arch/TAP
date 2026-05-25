@@ -221,6 +221,94 @@
   </section>
 
   <!-- ═══════════════════════════════════════
+       SCENE 5b — AI BALL TECH
+  ════════════════════════════════════════ -->
+  <section class="scene scene-dark" id="aiball">
+    <div class="aiball-layout">
+
+      <!-- LEFT: visual -->
+      <div class="aiball-visual reveal-left">
+        <div class="aiball-radar">
+          <div class="radar-ring ring-1"></div>
+          <div class="radar-ring ring-2"></div>
+          <div class="radar-ring ring-3"></div>
+          <div class="radar-sweep"></div>
+          <div class="radar-center">
+            <svg viewBox="0 0 60 60" fill="none" class="radar-ball">
+              <circle cx="30" cy="30" r="24" stroke="rgba(232,67,57,0.6)" stroke-width="1.5"/>
+              <circle cx="30" cy="30" r="12" fill="rgba(232,67,57,0.15)" stroke="#e84339" stroke-width="1.5"/>
+              <circle cx="30" cy="30" r="4" fill="#e84339"/>
+              <path d="M30 6 Q42 18 30 30 Q18 42 30 54" stroke="rgba(255,255,255,0.3)" stroke-width="1" fill="none"/>
+              <path d="M6 30 Q18 18 30 30 Q42 42 54 30" stroke="rgba(255,255,255,0.3)" stroke-width="1" fill="none"/>
+            </svg>
+          </div>
+          <!-- floating stat chips -->
+          <div class="radar-chip chip-1 reveal-up" data-delay="200">
+            <span class="chip-val">187</span>
+            <span class="chip-label">km/h</span>
+          </div>
+          <div class="radar-chip chip-2 reveal-up" data-delay="350">
+            <span class="chip-val">94</span>
+            <span class="chip-label">% accuracy</span>
+          </div>
+          <div class="radar-chip chip-3 reveal-up" data-delay="500">
+            <span class="chip-val">3.2s</span>
+            <span class="chip-label">rally avg</span>
+          </div>
+          <div class="radar-chip chip-4 reveal-up" data-delay="650">
+            <span class="chip-val">12m</span>
+            <span class="chip-label">coverage</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT: copy -->
+      <div class="aiball-text reveal-right">
+        <div class="section-eyebrow">Powered by Technology</div>
+        <h2 class="section-title">Meet <em>AI Ball</em></h2>
+        <p class="section-body">
+          Every court at TAP is powered by AI Ball — an intelligent tracking
+          system embedded in the ball itself. It monitors every shot, every
+          rally, and every movement in real time, giving you data that
+          professional players use to level up their game.
+        </p>
+        <div class="aiball-stats">
+          <div class="aiball-stat">
+            <div class="aiball-stat-icon">⚡</div>
+            <div>
+              <div class="aiball-stat-title">Shot Speed</div>
+              <div class="aiball-stat-desc">Measures ball velocity on every strike — up to 200 km/h</div>
+            </div>
+          </div>
+          <div class="aiball-stat">
+            <div class="aiball-stat-icon">🎯</div>
+            <div>
+              <div class="aiball-stat-title">Placement Accuracy</div>
+              <div class="aiball-stat-desc">Tracks exactly where every ball lands on the court</div>
+            </div>
+          </div>
+          <div class="aiball-stat">
+            <div class="aiball-stat-icon">📊</div>
+            <div>
+              <div class="aiball-stat-title">Player Heatmaps</div>
+              <div class="aiball-stat-desc">Shows your court coverage and movement patterns</div>
+            </div>
+          </div>
+          <div class="aiball-stat">
+            <div class="aiball-stat-icon">🏆</div>
+            <div>
+              <div class="aiball-stat-title">Match Reports</div>
+              <div class="aiball-stat-desc">Full post-match breakdown sent straight to your phone</div>
+            </div>
+          </div>
+        </div>
+        <a href="#book" class="btn-primary">Play a Smart Court →</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
        SCENE 6 — STATS TICKER
   ════════════════════════════════════════ -->
   <div class="stats-strip">
