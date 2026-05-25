@@ -1,6 +1,5 @@
 /* ═══════════════════════════════════════════
    TAP PADEL CANGGU — JavaScript
-   3D Scroll-Driven Cinematic Experience
 ═══════════════════════════════════════════ */
 
 /* ─── LOADER ─── */
@@ -28,24 +27,16 @@
 /* ─── CUSTOM CURSOR ─── */
 const cursor    = document.getElementById('cursor');
 const cursorDot = document.getElementById('cursor-dot');
-
 let mouseX = -100, mouseY = -100;
 let curX = -100, curY = -100;
 
 document.addEventListener('mousemove', e => {
-  mouseX = e.clientX;
-  mouseY = e.clientY;
+  mouseX = e.clientX; mouseY = e.clientY;
   cursorDot.style.left = mouseX + 'px';
   cursorDot.style.top  = mouseY + 'px';
 });
-document.addEventListener('mouseleave', () => {
-  cursor.style.opacity = '0';
-  cursorDot.style.opacity = '0';
-});
-document.addEventListener('mouseenter', () => {
-  cursor.style.opacity = '1';
-  cursorDot.style.opacity = '1';
-});
+document.addEventListener('mouseleave', () => { cursor.style.opacity = '0'; cursorDot.style.opacity = '0'; });
+document.addEventListener('mouseenter', () => { cursor.style.opacity = '1'; cursorDot.style.opacity = '1'; });
 
 function animateCursor() {
   curX += (mouseX - curX) * 0.12;
@@ -56,7 +47,7 @@ function animateCursor() {
 }
 animateCursor();
 
-/* ─── NAV SCROLL BEHAVIOUR ─── */
+/* ─── NAV ─── */
 const nav = document.getElementById('nav');
 window.addEventListener('scroll', () => {
   nav.classList.toggle('scrolled', window.scrollY > 60);
@@ -87,27 +78,21 @@ mobileMenu.querySelectorAll('a').forEach(a => {
   });
 });
 
-/* ─── COURTS PHOTO GALLERY ───────────────────────────────────────────────
-   To add more court photos:
-   1. Name your files: court1.jpg, court2.jpg, court3.jpg ... (up to court9.jpg)
-   2. Drop them into the  assets/  folder
-   3. Refresh the browser — they appear automatically
-   ─────────────────────────────────────────────────────────────────────── */
+/* ─── COURTS PHOTO GALLERY ─── */
 const courtPhotos = [
-  { file: 'assets/court1.jpg',    fallback: 'assets/facility.svg', label: 'Court 1' },
-  { file: 'assets/court2.jpg',    fallback: 'assets/facility.svg', label: 'Court 2' },
-  { file: 'assets/court3.jpg',    fallback: 'assets/facility.svg', label: 'Court 3' },
-  { file: 'assets/court4.jpg',    fallback: 'assets/facility.svg', label: 'Court 4' },
-  { file: 'assets/facility.jpg',  fallback: 'assets/facility.svg', label: 'The Lounge' },
-  { file: 'assets/court5.jpg',    fallback: 'assets/facility.svg', label: 'Night Sessions' },
-  { file: 'assets/court6.jpg',    fallback: 'assets/facility.svg', label: 'Tournament Court' },
+  { file: 'assets/court1.png',   fallback: 'assets/facility.svg', label: 'Court 1' },
+  { file: 'assets/court2.png',   fallback: 'assets/facility.svg', label: 'The TAP Sign' },
+  { file: 'assets/facility.png', fallback: 'assets/facility.svg', label: 'The Lounge' },
+  { file: 'assets/court3.png',   fallback: 'assets/facility.svg', label: 'Court 3' },
+  { file: 'assets/court4.png',   fallback: 'assets/facility.svg', label: 'Court 4' },
+  { file: 'assets/court5.png',   fallback: 'assets/facility.svg', label: 'Night Sessions' },
+  { file: 'assets/court6.png',   fallback: 'assets/facility.svg', label: 'Tournament Court' },
 ];
 
 function buildGallery() {
   const track = document.getElementById('galleryTrack');
   if (!track) return;
   track.innerHTML = '';
-
   courtPhotos.forEach(photo => {
     const item = document.createElement('div');
     item.className = 'gallery-item';
@@ -116,41 +101,24 @@ function buildGallery() {
       <div class="gallery-item-label">${photo.label}</div>`;
     track.appendChild(item);
   });
-
   setupGalleryDrag(track.parentElement, track);
 }
 
 function setupGalleryDrag(strip, track) {
   let isDown = false, startX = 0, scrollLeft = 0;
-
-  strip.addEventListener('mousedown', e => {
-    isDown = true;
-    strip.classList.add('active');
-    startX = e.pageX - strip.offsetLeft;
-    scrollLeft = strip.scrollLeft;
-  });
+  strip.addEventListener('mousedown', e => { isDown = true; startX = e.pageX - strip.offsetLeft; scrollLeft = strip.scrollLeft; });
   strip.addEventListener('mouseleave', () => { isDown = false; });
   strip.addEventListener('mouseup', () => { isDown = false; });
   strip.addEventListener('mousemove', e => {
     if (!isDown) return;
     e.preventDefault();
-    const x = e.pageX - strip.offsetLeft;
-    strip.scrollLeft = scrollLeft - (x - startX) * 1.4;
+    strip.scrollLeft = scrollLeft - (e.pageX - strip.offsetLeft - startX) * 1.4;
   });
-
-  strip.addEventListener('touchstart', e => {
-    startX = e.touches[0].pageX;
-    scrollLeft = strip.scrollLeft;
-  }, { passive: true });
-  strip.addEventListener('touchmove', e => {
-    const x = e.touches[0].pageX;
-    strip.scrollLeft = scrollLeft - (x - startX);
-  }, { passive: true });
-
+  strip.addEventListener('touchstart', e => { startX = e.touches[0].pageX; scrollLeft = strip.scrollLeft; }, { passive: true });
+  strip.addEventListener('touchmove', e => { strip.scrollLeft = scrollLeft - (e.touches[0].pageX - startX); }, { passive: true });
   strip.style.overflowX = 'scroll';
   strip.style.scrollbarWidth = 'none';
   strip.style.msOverflowStyle = 'none';
-  strip.style.cssText += '; -webkit-overflow-scrolling: touch;';
 }
 
 /* ─── PARALLAX ─── */
@@ -158,27 +126,22 @@ function handleParallax() {
   document.querySelectorAll('.parallax-bg, .parallax-layer').forEach(el => {
     const rect  = el.parentElement.getBoundingClientRect();
     const speed = parseFloat(el.dataset.speed || 0.3);
-    const offset = rect.top * speed;
-    el.style.transform = `translateY(${offset}px)`;
+    el.style.transform = `translateY(${rect.top * speed}px)`;
   });
 }
 window.addEventListener('scroll', handleParallax, { passive: true });
 
-/* ─── REVEAL ON SCROLL (IntersectionObserver) ─── */
+/* ─── REVEAL ON SCROLL ─── */
 function setupReveal() {
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (!entry.isIntersecting) return;
-      const el    = entry.target;
-      const delay = parseInt(el.dataset.delay || 0);
-      setTimeout(() => el.classList.add('revealed'), delay);
+      const el = entry.target;
+      setTimeout(() => el.classList.add('revealed'), parseInt(el.dataset.delay || 0));
       observer.unobserve(el);
     });
   }, { threshold: 0.15 });
-
-  document.querySelectorAll('.reveal-up, .reveal-left, .reveal-right').forEach(el => {
-    observer.observe(el);
-  });
+  document.querySelectorAll('.reveal-up, .reveal-left, .reveal-right').forEach(el => observer.observe(el));
 }
 
 /* ─── COUNTER ANIMATION ─── */
@@ -186,11 +149,10 @@ function setupCounters() {
   const counterObserver = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (!entry.isIntersecting) return;
-      const el     = entry.target;
+      const el = entry.target;
       const target = parseInt(el.dataset.target);
-      const duration = 1600;
-      const step   = target / (duration / 16);
-      let current  = 0;
+      const step = target / (1600 / 16);
+      let current = 0;
       const timer = setInterval(() => {
         current = Math.min(current + step, target);
         el.textContent = Math.floor(current).toLocaleString();
@@ -199,20 +161,19 @@ function setupCounters() {
       counterObserver.unobserve(el);
     });
   }, { threshold: 0.5 });
-
   document.querySelectorAll('.stat-num').forEach(el => counterObserver.observe(el));
 }
 
 /* ─── 3D CAROUSEL ─── */
-const IMG_RACKETS  = 'assets/rackets.jpg';
-const IMG_FACILITY = 'assets/facility.jpg';
+const IMG_RACKETS  = 'assets/rackets.png';
+const IMG_FACILITY = 'assets/facility.png';
 
 const racketData = [
-  { img: IMG_RACKETS,  title: 'METALBONE HRD',    sub: 'Adidas · High Performance' },
-  { img: IMG_RACKETS,  title: 'METALBONE CARBON',  sub: 'Adidas · Pro Series' },
-  { img: IMG_RACKETS,  title: 'CROSS IT LIGHT',    sub: 'Adidas · Control Series' },
-  { img: IMG_RACKETS,  title: 'ARROW CTRL',        sub: 'Adidas · Speed Series' },
-  { img: IMG_FACILITY, title: 'ACCESSORY KIT',     sub: 'Adidas · Full Bundle' },
+  { img: IMG_RACKETS,  title: 'METALBONE HRD',   sub: 'Adidas · High Performance' },
+  { img: IMG_RACKETS,  title: 'METALBONE CARBON', sub: 'Adidas · Pro Series' },
+  { img: IMG_RACKETS,  title: 'CROSS IT LIGHT',   sub: 'Adidas · Control Series' },
+  { img: IMG_RACKETS,  title: 'ARROW CTRL',       sub: 'Adidas · Speed Series' },
+  { img: IMG_FACILITY, title: 'ACCESSORY KIT',    sub: 'Adidas · Full Bundle' },
 ];
 
 let currentCard  = 0;
@@ -223,10 +184,8 @@ function buildCarousel() {
   const total = racketData.length;
   const angleStep = 360 / total;
   const radius = Math.round(280 / Math.tan(Math.PI / total));
-
   carouselEl.innerHTML = '';
   dotsEl.innerHTML     = '';
-
   racketData.forEach((item, i) => {
     const card = document.createElement('div');
     card.className = 'c-card';
@@ -240,33 +199,27 @@ function buildCarousel() {
       </div>`;
     card.addEventListener('click', () => goToCard(i));
     carouselEl.appendChild(card);
-
     const dot = document.createElement('div');
     dot.className = 'c-dot' + (i === 0 ? ' active' : '');
     dot.addEventListener('click', () => goToCard(i));
     dotsEl.appendChild(dot);
   });
-
   rotateCarousel();
 }
 
 function goToCard(index) {
   currentCard = ((index % racketData.length) + racketData.length) % racketData.length;
   rotateCarousel();
-  dotsEl.querySelectorAll('.c-dot').forEach((d, i) =>
-    d.classList.toggle('active', i === currentCard));
+  dotsEl.querySelectorAll('.c-dot').forEach((d, i) => d.classList.toggle('active', i === currentCard));
 }
 
 function rotateCarousel() {
-  const total = racketData.length;
-  const angleStep = 360 / total;
-  carouselEl.style.transform = `rotateY(${-currentCard * angleStep}deg)`;
+  carouselEl.style.transform = `rotateY(${-currentCard * (360 / racketData.length)}deg)`;
 }
 
 document.getElementById('prevBtn').addEventListener('click', () => goToCard(currentCard - 1));
 document.getElementById('nextBtn').addEventListener('click', () => goToCard(currentCard + 1));
 
-/* Drag/swipe on carousel */
 let dragStartX = null;
 carouselEl.addEventListener('mousedown', e => { dragStartX = e.clientX; });
 carouselEl.addEventListener('mouseup', e => {
@@ -298,13 +251,11 @@ document.getElementById('bookingForm').addEventListener('submit', e => {
   }, 3500);
 });
 
-/* ─── SCROLL-DRIVEN HERO ZOOM ─── */
+/* ─── HERO ZOOM ON SCROLL ─── */
 function heroZoom() {
   const heroImg = document.getElementById('hero-img');
   if (!heroImg) return;
-  const scrolled = window.scrollY;
-  const vh = window.innerHeight;
-  const progress = Math.min(scrolled / vh, 1);
+  const progress = Math.min(window.scrollY / window.innerHeight, 1);
   heroImg.style.transform = `scale(${1 + progress * 0.12})`;
   heroImg.style.filter    = `brightness(${1 - progress * 0.3})`;
 }
@@ -320,11 +271,7 @@ function kickOffAnimations() {
   heroZoom();
 }
 
-/* ─── SET MIN DATE ON BOOKING ─── */
 window.addEventListener('DOMContentLoaded', () => {
   const dateInput = document.querySelector('input[type="date"]');
-  if (dateInput) {
-    const today = new Date().toISOString().split('T')[0];
-    dateInput.min = today;
-  }
+  if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
 });
