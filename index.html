@@ -246,66 +246,33 @@
   </div>
 
   <!-- ═══════════════════════════════════════
-       SCENE 7 — BOOKING
+       SCENE 7 — BOOKING (Playtomic)
   ════════════════════════════════════════ -->
   <section class="scene scene-dark" id="book">
     <div class="booking-wrapper reveal-up">
       <div class="section-eyebrow">Ready to Play?</div>
       <h2 class="section-title">Book Your <em>Court</em></h2>
       <p class="section-body narrow">
-        Choose your time slot below and we'll confirm within minutes.
+        We use Playtomic for all court bookings — it's free, instant,
+        and you can manage everything from your phone.
       </p>
-      <form class="booking-form" id="bookingForm">
-        <div class="form-row">
-          <div class="form-group">
-            <label>Your Name</label>
-            <input type="text" placeholder="First &amp; Last name" required />
-          </div>
-          <div class="form-group">
-            <label>Email / WhatsApp</label>
-            <input type="text" placeholder="contact@email.com" required />
-          </div>
+      <div class="playtomic-cta">
+        <a href="https://playtomic.io/tap-padel-canggu" target="_blank" rel="noopener" class="btn-playtomic">
+          <svg viewBox="0 0 24 24" fill="currentColor" class="playtomic-icon"><path d="M8 5v14l11-7z"/></svg>
+          Book on Playtomic
+        </a>
+        <p class="playtomic-hint">Opens Playtomic · Available on iOS &amp; Android</p>
+        <div class="playtomic-badges">
+          <a href="https://apps.apple.com/app/playtomic/id1138912295" target="_blank" rel="noopener" class="store-badge">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+            App Store
+          </a>
+          <a href="https://play.google.com/store/apps/details?id=com.playtomic.app" target="_blank" rel="noopener" class="store-badge">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3.18 23.76c.3.17.64.22.99.14l12.5-7.17-2.89-2.89-10.6 9.92zM.58 1.28C.22 1.64 0 2.2 0 2.93v18.14c0 .73.22 1.29.58 1.65l.09.08 10.16-10.16v-.24L.67 1.2l-.09.08zM20.48 10.4l-2.89-1.66-3.24 3.24 3.24 3.24 2.91-1.67c.83-.48.83-1.26-.02-1.74v-.41zM3.18.24L15.68 7.4 12.79 10.3 2.18.38c.31-.22.68-.25 1-.14z"/></svg>
+            Google Play
+          </a>
         </div>
-        <div class="form-row">
-          <div class="form-group">
-            <label>Date</label>
-            <input type="date" required />
-          </div>
-          <div class="form-group">
-            <label>Time Slot</label>
-            <select required>
-              <option value="">Select a slot</option>
-              <option>07:00 – 08:30</option>
-              <option>09:00 – 10:30</option>
-              <option>11:00 – 12:30</option>
-              <option>14:00 – 15:30</option>
-              <option>16:00 – 17:30</option>
-              <option>18:00 – 19:30</option>
-              <option>20:00 – 21:30</option>
-            </select>
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="form-group">
-            <label>Court</label>
-            <select>
-              <option>Court 1</option>
-              <option>Court 2</option>
-              <option>Court 3</option>
-              <option>Court 4</option>
-              <option>Any available</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label>Players</label>
-            <select>
-              <option>2 players</option>
-              <option>4 players</option>
-            </select>
-          </div>
-        </div>
-        <button type="submit" class="btn-primary btn-full">Confirm Booking →</button>
-      </form>
+      </div>
     </div>
   </section>
 
